@@ -1,0 +1,9 @@
+# XAMPP / local files
+*.log
+
+# VS Code
+.vscode/
+
+# Operating system files
+Thumbs.db
+.DS_Store
