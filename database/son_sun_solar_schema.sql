@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2026 at 12:52 PM
+-- Generation Time: Oct 14, 2026 at 04:47 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +43,13 @@ CREATE TABLE `attendance` (
 
 CREATE TABLE `customers` (
   `customer_id` int(11) NOT NULL,
-  `full_name` varchar(150) NOT NULL,
+  `fname` varchar(100) DEFAULT NULL,
+  `mname` varchar(100) DEFAULT NULL,
+  `lname` varchar(100) DEFAULT NULL,
+  `bday` date DEFAULT NULL,
+  `gender` varchar(20) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
   `email` varchar(150) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -98,7 +104,8 @@ ALTER TABLE `attendance`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `unique_customer_username` (`username`);
 
 --
 -- Indexes for table `employees`
